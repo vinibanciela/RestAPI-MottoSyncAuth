@@ -1,16 +1,15 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
 WORKDIR /app
+RUN useradd -ms /bin/bash appuser
+USER appuser
 EXPOSE 8080
-
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["MotoSyncAuth/MotoSyncAuth.csproj", "MotoSyncAuth/"]
-RUN dotnet restore "MotoSyncAuth/MotoSyncAuth.csproj"
+COPY ["MotoSyncAuth.csproj", "."]
+RUN dotnet restore "MotoSyncAuth.csproj"
 COPY . .
-WORKDIR "/src/MotoSyncAuth"
 RUN dotnet build "MotoSyncAuth.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
