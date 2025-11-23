@@ -277,6 +277,8 @@ O versionamento é aplicado diretamente na rota, seguindo o padrão:
 
 A **FuturoJobs.Api** utiliza o **Entity Framework Core** como camada de persistência, permitindo mapear as entidades `Empresa` e `Vaga` para o banco de dados de forma automática e segura.
 
+---
+
 
 ### 🖥️ 5.1 Ambiente Local — SQL Server LocalDB (SQL Express)
 
@@ -456,7 +458,6 @@ dotnet ef database drop
 Este guia descreve como deployar a solução **FuturoJobs** na plataforma Azure DevOps de forma simplificada.
 
 ```
-
 1 - Entrar na conta da Azure
 az login
 
@@ -516,6 +517,7 @@ az group delete --name rg-futurojobs-app
 ## 10. Licença
 
 Projeto desenvolvido exclusivamente para fins acadêmicos na FIAP — Global Solution 2025.  
+
 O uso, cópia ou distribuição não é permitido sem autorização dos autores.
 
 
