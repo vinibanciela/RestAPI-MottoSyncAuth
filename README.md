@@ -418,6 +418,12 @@ Este guia descreve como rodar a solução **FuturoJobs** localmente utilizando o
 
 ```
 1 - Clonar a solução
+AzureRepos(https ou ssh):
+git clone https://RM558117@dev.azure.com/RM558117/Global%20Solution%202%20-%20Devops/_git/Global%20Solution%202%20-%20Devops
+ou
+git clone git@ssh.dev.azure.com:v3/RM558117/Global%20Solution%202%20-%20Devops/Global%20Solution%202%20-%20Devops
+ou
+Github:
 git clone 
 
 2 - Abrir a solução
@@ -438,16 +444,18 @@ cd FuturoJobs.Api
 
 7 - Rodar o projeto da API
 dotnet run 
-Obs: Alterar a DefaultConnection em appsettings.Development.json caso queira utilizar outro banco para teste local.
-Atualmente está configurado com a string padrão do SQL Express: "Server=localhost\\SQLEXPRESS;Database=FuturoJobsDb;Trusted_Connection=True;TrustServerCertificate=True;"
+Obs: Alterar a DefaultConnection em appsettings.Development.json caso queira utilizar outro banco para teste local. Atualmente está configurado com a string padrão do SQL Express: "Server=localhost\\SQLEXPRESS;Database=FuturoJobsDb;Trusted_Connection=True;TrustServerCertificate=True;"
 
-8 - Acessar a Documentação Interativa em: 
+8 - Disponível em:
+http://localhost:5216
+
+9 - Acessar a Documentação Interativa em: 
 http://localhost:5216/swagger/index.html
 
-9 - Parar a aplicação
+10 - Parar a aplicação
 Cntrl + C no terminal que está rodando
 
-10 - Limpar o banco de dados local 
+11 - Limpar o banco de dados local 
 dotnet ef database drop
 
 ```
